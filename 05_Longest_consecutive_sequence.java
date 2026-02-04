@@ -59,3 +59,39 @@ public class Solution {
         return longest;
     }
 }
+
+
+// Better Solution 
+// Time Complexity O(n)
+// Space Complexity O(n)
+
+import java.util.*;
+
+public class Solution {
+
+    public static int longestConsecutive(int[] arr) {
+        int n = arr.length;
+        if (n == 0) return 0;
+
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+
+        int longest = 1;
+
+        for (int num : set) {
+            if (!set.contains(num - 1)) {
+                int x = num;
+                int count = 1;
+
+                while (set.contains(x + 1)) {
+                    x++;
+                    count++;
+                }
+                longest = Math.max(longest, count);
+            }
+        }
+        return longest;
+    }
+}
