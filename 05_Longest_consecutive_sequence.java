@@ -31,3 +31,31 @@ public class Solution {
 }
 
 
+// Better Solution 
+// Time Complexity O(n log n)
+// Space Complexity O(1) (ignoring sort space)
+
+import java.util.*;
+
+public class Solution {
+
+    public static int longestConsecutive(int[] arr) {
+        if (arr.length == 0) return 0;
+
+        Arrays.sort(arr);
+
+        int longest = 1;
+        int count = 1;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == arr[i - 1]) continue;
+            else if (arr[i] == arr[i - 1] + 1) {
+                count++;
+            } else {
+                count = 1;
+            }
+            longest = Math.max(longest, count);
+        }
+        return longest;
+    }
+}
