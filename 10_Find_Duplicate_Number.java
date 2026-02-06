@@ -16,3 +16,20 @@ class Solution {
         return -1;
     }
 }
+
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(1)  
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        Arrays.sort(nums);
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return nums[i];
+            }
+        }
+        return -1;
+    }
+}
