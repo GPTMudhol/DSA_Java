@@ -1,4 +1,4 @@
-// Brute Force Approach 
+// Brute Force Approach (HashMap)
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 
@@ -17,7 +17,7 @@ class Solution {
     }
 }
 
-
+// Better Approach (sorting)
 // Time Complexity: O(n log n)
 // Space Complexity: O(1)  
 
@@ -31,5 +31,31 @@ class Solution {
             }
         }
         return -1;
+    }
+}
+
+
+// Optimal Approach (Floyd’s Cycle Detection) 
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        slow = nums[0];
+
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+
+        return slow;
     }
 }
