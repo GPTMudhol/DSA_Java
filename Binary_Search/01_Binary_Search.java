@@ -34,3 +34,27 @@ class Solution {
         return -1;
     }
 }
+
+// Optimal (Iterative Binary Search – Overflow Safe)
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+
+class Solution {
+    public int binarySearch(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = low + ((high - low) >> 1); // prevents overflow
+
+            if (nums[mid] == target)
+                return mid;
+
+            if (nums[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return -1;
+    }
+}
