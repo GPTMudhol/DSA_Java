@@ -14,3 +14,15 @@ class Solution {
 }
 
 
+// Better Approach (Sorting)
+// Time Complexity: O(n log n)
+// Space Complexity: O(1)
+
+import java.util.Arrays;
+
+class Solution {
+    public int findMin(int[] nums) {
+        Arrays.sort(nums);
+        return nums[0];
+    }
+}
