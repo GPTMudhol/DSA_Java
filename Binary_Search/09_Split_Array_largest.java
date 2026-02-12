@@ -30,3 +30,40 @@ class Solution {
     }
 }
 
+
+
+// Better Approach (DP)
+// Time Complexity  O(n^2 * k)
+// Space Complexity  O(n * k)
+
+class Solution {
+    public int splitArray(int[] nums, int k) {
+        int n = nums.length;
+        int[] prefix = new int[n + 1];
+
+        for (int i = 0; i < n; i++)
+            prefix[i + 1] = prefix[i] + nums[i];
+
+        int[][] dp = new int[n + 1][k + 1];
+
+        for (int i = 0; i <= n; i++)
+            for (int j = 0; j <= k; j++)
+                dp[i][j] = Integer.MAX_VALUE;
+
+        dp[0][0] = 0;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= k; j++) {
+                for (int p = 0; p < i; p++) {
+                    dp[i][j] = Math.min(dp[i][j],
+                            Math.max(dp[p][j - 1],
+                                     prefix[i] - prefix[p]));
+                }
+            }
+        }
+
+        return dp[n][k];
+    }
+}
+
+
