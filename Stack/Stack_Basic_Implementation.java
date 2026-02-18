@@ -91,6 +91,20 @@ public class Main {
 
 
 // Stack Using Deque
+// push()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// pop()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// peek()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Overall Space
+// Space Complexity: O(n)
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -109,6 +123,16 @@ public class Main {
 }
 
 // Stack Using Linked List
+// Push Operation
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Pop Operation
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Overall Stack Space
+// Space Complexity: O(n)
 
 class Node {
     int data;
