@@ -1,4 +1,18 @@
 // Stack Implementation Using Array
+// Push Operation
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Pop Operation
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Peek Operation
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Overall Stack Space
+// Space Complexity: O(n)
 
 class Stack {
     int[] arr;
@@ -44,6 +58,20 @@ class Stack {
 
 
 // Stack Using Java Built-in Stack Class
+// push()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// pop()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// peek()
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
+// Overall Space
+// Space Complexity: O(n)
 
 import java.util.Stack;
 
