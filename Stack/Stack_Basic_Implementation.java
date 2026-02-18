@@ -79,3 +79,35 @@ public class Main {
         System.out.println(stack.peek());
     }
 }
+
+// Stack Using Linked List
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class Stack {
+    Node top;
+
+    void push(int x) {
+        Node newNode = new Node(x);
+        newNode.next = top;
+        top = newNode;
+    }
+
+    int pop() {
+        if (top == null) {
+            System.out.println("Underflow");
+            return -1;
+        }
+        int val = top.data;
+        top = top.next;
+        return val;
+    }
+}
