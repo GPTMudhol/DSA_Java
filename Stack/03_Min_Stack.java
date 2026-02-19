@@ -59,3 +59,29 @@ class Solution {
         return stack.isEmpty();
     }
 }
+
+// Optimal Approach
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+import java.util.*;
+
+class Solution {
+    public boolean isValid(String s) {
+        
+        Deque<Character> stack = new ArrayDeque<>();
+        
+        for (char ch : s.toCharArray()) {
+            
+            if (ch == '(') stack.push(')');
+            else if (ch == '{') stack.push('}');
+            else if (ch == '[') stack.push(']');
+            else {
+                if (stack.isEmpty() || stack.pop() != ch)
+                    return false;
+            }
+        }
+        
+        return stack.isEmpty();
+    }
+}
