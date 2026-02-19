@@ -1,3 +1,5 @@
+**Valid Parentheses Problem**
+
 // Brute Force Approach
 // Time Complexity: O(n²)
 // Space Complexity: O(n)
@@ -85,3 +87,4 @@ class Solution {
         return stack.isEmpty();
     }
 }
+
