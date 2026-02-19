@@ -1,3 +1,6 @@
+// Min Stack problem 
+
+
 // Brute Force Approach 
 // Time Complexity for(push,pop,top) = O(1),getmin() O(n)
 // Space Complexity = O(n)
@@ -124,3 +127,4 @@ class MinStack {
         return (int) min;
     }
 }
+
