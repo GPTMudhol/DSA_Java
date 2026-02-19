@@ -73,3 +73,54 @@ class MinStack {
         return minStack.peek();
     }
 }
+
+
+
+// Most Optimal Approach
+// Time Complexity: O(1) for all operations
+// Space Complexity: O(n)
+
+import java.util.*;
+
+class MinStack {
+
+    Stack<Long> stack;
+    long min;
+
+    public MinStack() {
+        stack = new Stack<>();
+    }
+
+    public void push(int val) {
+        if (stack.isEmpty()) {
+            stack.push((long) val);
+            min = val;
+        } else {
+            if (val < min) {
+                stack.push(2L * val - min);
+                min = val;
+            } else {
+                stack.push((long) val);
+            }
+        }
+    }
+
+    public void pop() {
+        if (stack.peek() < min) {
+            min = 2 * min - stack.pop();
+        } else {
+            stack.pop();
+        }
+    }
+
+    public int top() {
+        if (stack.peek() < min) {
+            return (int) min;
+        }
+        return stack.peek().intValue();
+    }
+
+    public int getMin() {
+        return (int) min;
+    }
+}
