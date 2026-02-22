@@ -75,3 +75,38 @@ public int[] asteroidCollision(int[] asteroids) {
 
     return result;
 }
+
+
+// Optimal Approach (Using Array as Stack)
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+public int[] asteroidCollision(int[] asteroids) {
+
+    int[] stack = new int[asteroids.length];
+    int top = -1;
+
+    for (int asteroid : asteroids) {
+
+        boolean destroyed = false;
+
+        while (top >= 0 && asteroid < 0 && stack[top] > 0) {
+
+            if (stack[top] < -asteroid) {
+                top--;
+                continue;
+            } else if (stack[top] == -asteroid) {
+                top--;
+            }
+
+            destroyed = true;
+            break;
+        }
+
+        if (!destroyed) {
+            stack[++top] = asteroid;
+        }
+    }
+
+    return Arrays.copyOf(stack, top + 1);
+}
