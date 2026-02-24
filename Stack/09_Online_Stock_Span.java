@@ -25,3 +25,43 @@ class StockSpanner {
         return span;
     }
 }
+
+
+// Better Approach
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+import java.util.*;
+
+class StockSpanner {
+
+    private Stack<Integer> stack;
+    private List<Integer> prices;
+    private int index;
+
+    public StockSpanner() {
+        stack = new Stack<>();
+        prices = new ArrayList<>();
+        index = -1;
+    }
+
+    public int next(int price) {
+        index++;
+        prices.add(price);
+
+        while (!stack.isEmpty() && prices.get(stack.peek()) <= price) {
+            stack.pop();
+        }
+
+        int span;
+        if (stack.isEmpty()) {
+            span = index + 1;
+        } else {
+            span = index - stack.peek();
+        }
+
+        stack.push(index);
+
+        return span;
+    }
+}
