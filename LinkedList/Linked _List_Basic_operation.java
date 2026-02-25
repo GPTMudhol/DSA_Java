@@ -164,6 +164,40 @@ public class LinkedListDemo {
         System.out.println("null");
     }
 
+    // ==============================
+    // SEARCH
+    // ==============================
+
+    // Search element
+    // Time Complexity: O(n)
+    public boolean search(int key) {
+        Node temp = head;
+
+        while (temp != null) {
+            if (temp.data == key) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    // ==============================
+    // TRAVERSAL
+    // ==============================
+
+    // Display Linked List
+    // Time Complexity: O(n)
+    public void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
     
     // ==============================
     // MAIN METHOD
