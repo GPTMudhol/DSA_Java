@@ -11,7 +11,66 @@ public class LinkedListDemo {
         }
     }
 
-    
+    // ==============================
+    // DELETE OPERATIONS
+    // ==============================
+
+    // Delete from Beginning
+    // Time Complexity: O(1)
+    public void deleteFromBeginning() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;
+    }
+
+    // Delete from End
+    // Time Complexity: O(n)
+    public void deleteFromEnd() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = null;
+    }
+
+    // Delete by Value
+    // Time Complexity: O(n)
+    public void deleteByValue(int key) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head.data == key) {
+            head = head.next;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next != null && temp.next.data != key) {
+            temp = temp.next;
+        }
+
+        if (temp.next == null) {
+            System.out.println("Value not found");
+            return;
+        }
+
+        temp.next = temp.next.next;
+    }
 
 
     
