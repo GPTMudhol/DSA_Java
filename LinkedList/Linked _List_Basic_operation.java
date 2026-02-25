@@ -10,6 +10,63 @@ public class LinkedListDemo {
             this.next = null;
         }
     }
+    // Head of the list
+    Node head;
+
+    // ==============================
+    // INSERT OPERATIONS
+    // ==============================
+
+    // Insert at Beginning
+    // Time Complexity: O(1)
+    public void insertAtBeginning(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    // Insert at End
+    // Time Complexity: O(n)
+    public void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+    }
+
+    // Insert at Position (1-based index)
+    // Time Complexity: O(n)
+    public void insertAtPosition(int data, int position) {
+        Node newNode = new Node(data);
+
+        if (position == 1) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        for (int i = 1; i < position - 1 && temp != null; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            System.out.println("Position out of bounds");
+            return;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
 
     // ==============================
     // DELETE OPERATIONS
