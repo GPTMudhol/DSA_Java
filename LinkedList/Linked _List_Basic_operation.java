@@ -129,9 +129,8 @@ public class LinkedListDemo {
     }
 
 
-    // ==============================
+    
     // SEARCH
-    // ==============================
 
     // Search element
     // Time Complexity: O(n)
@@ -147,9 +146,8 @@ public class LinkedListDemo {
         return false;
     }
 
-    // ==============================
+    
     // TRAVERSAL
-    // ==============================
 
     // Display Linked List
     // Time Complexity: O(n)
@@ -163,9 +161,8 @@ public class LinkedListDemo {
         System.out.println("null");
     }
 
-    // ==============================
+    
     // SEARCH
-    // ==============================
 
     // Search element
     // Time Complexity: O(n)
