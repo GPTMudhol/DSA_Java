@@ -28,3 +28,43 @@ public class LinkedListCycleBrute {
         return false; // No cycle
     }
 }
+
+
+// Better Approach
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+import java.util.HashSet;
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class LinkedListCycleBetter {
+
+    public boolean hasCycle(ListNode head) {
+
+        HashSet<ListNode> visited = new HashSet<>();
+
+        ListNode current = head;
+
+        while (current != null) {
+
+            // If already visited → cycle
+            if (visited.contains(current)) {
+                return true;
+            }
+
+            visited.add(current);
+            current = current.next;
+        }
+
+        return false; // No cycle
+    }
+}
