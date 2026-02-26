@@ -13,9 +13,8 @@ public class LinkedListDemo {
     // Head of the list
     Node head;
 
-    // ==============================
+    
     // INSERT OPERATIONS
-    // ==============================
 
     // Insert at Beginning
     // Time Complexity: O(1)
@@ -68,9 +67,9 @@ public class LinkedListDemo {
         temp.next = newNode;
     }
 
-    // ==============================
+
+    
     // DELETE OPERATIONS
-    // ==============================
 
     // Delete from Beginning
     // Time Complexity: O(1)
