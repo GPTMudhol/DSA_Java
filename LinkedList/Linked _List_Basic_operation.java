@@ -178,9 +178,8 @@ public class LinkedListDemo {
         return false;
     }
 
-    // ==============================
+    
     // TRAVERSAL
-    // ==============================
 
     // Display Linked List
     // Time Complexity: O(n)
@@ -195,9 +194,9 @@ public class LinkedListDemo {
     }
 
     
-    // ==============================
+    
     // MAIN METHOD
-    // ==============================
+    
 
     public static void main(String[] args) {
 
